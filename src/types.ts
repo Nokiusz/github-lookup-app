@@ -1,9 +1,11 @@
-export interface ViewerDetails {
+export interface UserDetails {
   user: {
     avatarUrl: string;
     login: string;
     name: string;
+    bio: string;
     location: string;
+    company: string;
     createdAt: Date;
     followers: {
       totalCount: number;
@@ -17,11 +19,6 @@ export interface ViewerDetails {
     };
   };
 }
-
-export interface ViewerDetailsVars {
-  privacy: string;
-}
-
-export interface UserDetailsVars {
+export interface UserDetailsVariables {
   login: string;
 }

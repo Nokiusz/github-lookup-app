@@ -1,0 +1,9 @@
+{
+  "profile": {
+    "followers": "followers",
+    "following": "following"
+  },
+  "search":{
+    "search": "search..."
+  }
+}

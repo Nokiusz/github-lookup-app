@@ -1,11 +1,13 @@
 import { gql } from "@apollo/client";
 
 export const getUser = gql`
-  query searchedUser($login: String!) {
+  query getUser($login: String!) {
     user(login: $login) {
       avatarUrl
       login
       name
+      bio
+      company
       location
       createdAt
       followers {

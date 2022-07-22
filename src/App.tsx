@@ -1,12 +1,14 @@
 import React from "react";
-import "./App.css";
+import "./GlobalStyles.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Profile } from "features/Profile";
 import { PageNotFound } from "features/PageNotFound";
+import { TopBar } from "components";
 
 const App = () => (
   <Router>
+    <TopBar />
     <Routes>
       <Route path="/profile/:login" element={<Profile />} />
       <Route path="*" element={<PageNotFound />} />

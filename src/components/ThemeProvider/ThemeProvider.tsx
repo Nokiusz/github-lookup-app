@@ -4,10 +4,15 @@ import { ThemeProvider as OThemeProvider } from "styled-components";
 const baseTheme = {
   colors: {
     background: { primary: "#161b22" },
-    text: { primary: "#f0f6fc" },
-    typography: {
-      base: 'font-family: -apple-system, BlinkMacSystemFont, "Segoe UI" Helvetica, Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    text: {
+      primary: "#f0f6fc",
+      secondary: "#bbbbc5",
+      white: "#fff",
+      black: "#000",
     },
+  },
+  typography: {
+    base: 'font-family: -apple-system, BlinkMacSystemFont, "Segoe UI" Helvetica, Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
   },
 };
 export type ThemeType = typeof baseTheme;
