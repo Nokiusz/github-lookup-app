@@ -29,6 +29,7 @@ export const Followers = styled(Section)``;
 
 export const Location = styled(Section)``;
 export const Company = styled(Section)``;
+export const CreatedDate = styled(Section)``;
 
 export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.white};

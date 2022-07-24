@@ -9,7 +9,7 @@ import {
 import { useTranslation } from "react-i18next";
 
 import { getUser } from "graphql/queries/user";
-import { UserDetailsVariables, UserDetails } from "types";
+import { UserDetailsVariables, UserDetails, ViewerDetails } from "types";
 
 import {
   Avatar,
@@ -20,7 +20,9 @@ import {
   Title,
   Location,
   Company,
+  CreatedDate,
 } from "./Profile.styles";
+import { getAuthUser } from "graphql/queries/viewer";
 
 const Profile = (): JSX.Element => {
   const { t } = useTranslation();
@@ -35,6 +37,12 @@ const Profile = (): JSX.Element => {
     },
   });
 
+  const {
+    data: viewerDetails,
+    loading: viewerDetailsLoading,
+    error: viewerDetailsError,
+  } = useQuery<ViewerDetails>(getAuthUser);
+  console.log("viewer", viewerDetails);
   const { user } = userDetails || {};
   const defaultUserAvatar =
     "https://icon-library.com/images/default-user-icon/default-user-icon-4.jpg";
@@ -62,6 +70,8 @@ const Profile = (): JSX.Element => {
           {user.company}
         </Company>
       )}
+
+      <CreatedDate>{user?.createdAt.slice(0, 10)}</CreatedDate>
     </Container>
   );
 };

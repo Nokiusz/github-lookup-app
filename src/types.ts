@@ -6,7 +6,7 @@ export interface UserDetails {
     bio: string;
     location: string;
     company: string;
-    createdAt: Date;
+    createdAt: string;
     followers: {
       totalCount: number;
     };
@@ -21,4 +21,26 @@ export interface UserDetails {
 }
 export interface UserDetailsVariables {
   login: string;
+}
+
+export interface ViewerDetails {
+  user: {
+    avatarUrl: string;
+    login: string;
+    name: string;
+    bio: string;
+    location: string;
+    company: string;
+    createdAt: string;
+    followers: {
+      totalCount: number;
+    };
+    following: {
+      totalCount: number;
+    };
+
+    repositories: {
+      totalCount: number;
+    };
+  };
 }

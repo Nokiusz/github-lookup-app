@@ -4,6 +4,7 @@ import { Container } from "./TopBar.styles";
 
 const TopBar = () => (
   <Container>
+    <h1>Github Lookup App.</h1>
     <Search />
   </Container>
 );
