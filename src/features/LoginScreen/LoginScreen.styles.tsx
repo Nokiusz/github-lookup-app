@@ -9,7 +9,7 @@ export const Container = styled.div`
   background: ${({ theme }) => theme.colors.background.primary};
 `;
 
-export const Button = styled.button`
+export const Link = styled.a`
   display: flex;
   flex-direction: row;
   justify-content: center;

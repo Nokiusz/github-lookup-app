@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineGithub } from "react-icons/ai/index";
 import { Navigate, useNavigate } from "react-router-dom";
-import { Button, Container } from "./LoginScreen.styles";
+import { getCookie } from "typescript-cookie";
+
+import { Link, Container } from "./LoginScreen.styles";
 
 const LoginScreen = () => {
   const navigate = useNavigate();
-  const login = () => {
-    navigate("/profile/nokiusz");
-  };
+  useEffect(() => {
+    if (!getCookie("github_token")) {
+      navigate("/");
+    } else {
+      navigate("/profile/nokiusz");
+    }
+  }, [navigate]);
+
   return (
     <Container>
-      <Button onClick={login}>
+      <h1>Github Lookup.</h1>
+
+      <Link href="https://github.com/login/oauth/authorize?client_id=ca057960e8803f45e8b4&scope=repo%2Crepo_deployment%2Cuser%2C">
         <AiOutlineGithub />
         Login with github
-      </Button>
+      </Link>
     </Container>
   );
 };

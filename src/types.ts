@@ -24,7 +24,7 @@ export interface UserDetailsVariables {
 }
 
 export interface ViewerDetails {
-  user: {
+  [key: string]: {
     avatarUrl: string;
     login: string;
     name: string;

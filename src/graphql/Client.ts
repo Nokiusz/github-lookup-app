@@ -1,6 +1,8 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
+import { getCookie } from "typescript-cookie";
+
 const URL = createHttpLink({
   uri: "https://api.github.com/graphql",
 });
@@ -8,7 +10,7 @@ const URL = createHttpLink({
 const authLink = setContext((_, { headers }) => ({
   headers: {
     ...headers,
-    authorization: `Bearer ${process.env.REACT_APP_GITHUB_KEY}`,
+    authorization: `Bearer ${getCookie("github_token")}`,
   },
 }));
 

@@ -9,7 +9,6 @@ import { LoginScreen } from "features/LoginScreen";
 
 const App = () => (
   <Router>
-    {window.location.pathname !== "/" && <TopBar />}
     <Routes>
       <Route path="/" element={<LoginScreen />} />
       <Route path="/profile/:login" element={<Profile />} />
