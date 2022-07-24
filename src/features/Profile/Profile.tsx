@@ -50,8 +50,6 @@ const Profile = (): JSX.Element => {
   useEffect(() => {
     if (!getCookie("github_token")) {
       navigate("/");
-    } else {
-      navigate("/profile/nokiusz");
     }
   }, [navigate]);
 
