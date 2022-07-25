@@ -25,6 +25,7 @@ import {
   Company,
   CreatedDate,
 } from "./Profile.styles";
+import { getLanguageColor } from "utils/helpers/getLanguageColor";
 
 const Profile = (): JSX.Element => {
   const { t } = useTranslation();
@@ -60,6 +61,7 @@ const Profile = (): JSX.Element => {
     removeCookie("github_token");
     navigate("/");
   };
+  console.log(getLanguageColor('javascript'));
   return (
     <>
       <TopBar />
